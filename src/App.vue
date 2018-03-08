@@ -108,7 +108,7 @@ body {
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  margin-top: 60px;
+  margin-top: 1rem;
   text-align: center;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -167,7 +167,7 @@ body {
   grid-gap: 2px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  height: 50vh;
+  height: 40vh;
 
   span {
     border: 3px solid var(--blue);
