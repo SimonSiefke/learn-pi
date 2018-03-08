@@ -117,7 +117,7 @@ body {
 .digits {
   align-items: flex-end;
   display: grid;
-  font-size: 20vh;
+  font-size: 15vh;
   grid-auto-flow: column;
   height: 75%;
   justify-content: center;
@@ -167,7 +167,7 @@ body {
   grid-gap: 2px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  height: 40vh;
+  height: 35vh;
 
   span {
     border: 3px solid var(--blue);
