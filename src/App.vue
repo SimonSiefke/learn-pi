@@ -95,7 +95,6 @@ export default Vue.extend({
   --blue: #125ace;
   --orange: #ff741e;
   --wrong: crimson;
-  --wrong: lime;
 }
 
 body {
@@ -123,8 +122,8 @@ body {
   height: 75%;
   justify-content: center;
   line-height: @height;
-  margin-bottom: 2rem;
-  margin-top: @margin-bottom + 1rem;
+  margin-bottom: 3vh;
+  margin-top: @margin-bottom * 1.5;
 
   .incorrect {
     color: var(--wrong);
