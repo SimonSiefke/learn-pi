@@ -166,18 +166,18 @@ body {
   display: grid;
   grid-gap: 2px;
   grid-template-columns: repeat(3, 1fr);
-  height: 15rem;
+  grid-template-rows: repeat(4, 1fr);
+  height: 50vh;
 
   span {
     border: 3px solid var(--blue);
     display: grid;
     font-size: 1.4rem;
-    padding: 1.5rem;
+    padding: 10%;
     place-items: center;
-    transition: border 0.06s ease-out;
     user-select: none;
 
-    &:active, &:focus {
+    &:active, &:focus, &:hover {
       border-color: var(--orange);
     }
   }
