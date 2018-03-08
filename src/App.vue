@@ -2,8 +2,8 @@
   <div id="app">
     <vue-slider v-model="currentIndex" v-bind="options"></vue-slider>
     <section class="digits">
-      <span v-for="i in additionalDigitsShown" :key="i" :class="`previous${additionalDigitsShown- i+1}`">
-        {{pi[currentIndex-i]}}
+      <span v-for="i in additionalDigitsShown" :key="i" :class="[{hidden: !pi[currentIndex-i]},`previous${additionalDigitsShown- i+1}`]">
+        {{pi[currentIndex-i]||0}}
       </span>
       <span :class="[{incorrect:!correct},{hidden:!pi[currentIndex]}]" class="currentDigit">
         {{pi[currentIndex]||0}}
@@ -117,7 +117,7 @@ body {
 .digits {
   align-items: flex-end;
   display: grid;
-  font-size: 7rem;
+  font-size: 20vh;
   grid-auto-flow: column;
   height: 75%;
   justify-content: center;
