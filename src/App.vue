@@ -3,7 +3,7 @@
     <vue-slider v-model="currentIndex" v-bind="options"></vue-slider>
     <section class="digits">
       <span v-for="i in additionalDigitsShown" :key="i" :class="[{hidden: !pi[currentIndex-i]},`previous${additionalDigitsShown- i+1}`]">
-        {{pi[currentIndex-i]||0}}
+        {{pi[currentIndex-i -1]||0}}
       </span>
       <span :class="[{incorrect:!correct},{hidden:!pi[currentIndex]}]" class="currentDigit">
         {{pi[currentIndex]||0}}
