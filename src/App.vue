@@ -95,6 +95,7 @@ export default Vue.extend({
   --blue: #125ace;
   --orange: #ff741e;
   --wrong: crimson;
+  --wrong: lime;
 }
 
 body {
