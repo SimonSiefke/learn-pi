@@ -15,22 +15,13 @@
 
     <section class="info">
       <span>Current Digit: {{currentIndex+1}}</span>
-      <span>Best: {{currentIndex+1}}</span>
+      <span>Best: {{bestIndex+1}}</span>
     </section>
 
     <section class="input">
-      <span @click="input(7)" :class="{incorrect:incorrectInput(7)}">7</span>
-      <span @click="input(8)" :class="{incorrect:incorrectInput(8)}">8</span>
-      <span @click="input(9)" :class="{incorrect:incorrectInput(9)}">9</span>
-      <span @click="input(4)" :class="{incorrect:incorrectInput(4)}">4</span>
-      <span @click="input(5)" :class="{incorrect:incorrectInput(5)}">5</span>
-      <span @click="input(6)" :class="{incorrect:incorrectInput(6)}">6</span>
-      <span @click="input(1)" :class="{incorrect:incorrectInput(1)}">1</span>
-      <span @click="input(2)" :class="{incorrect:incorrectInput(2)}">2</span>
-      <span @click="input(3)" :class="{incorrect:incorrectInput(3)}">3</span>
-      <span></span>
-      <span @click="input(0)" :class="{incorrect:incorrectInput(0)}">0</span>
-      <span></span>
+      <span v-for="i in 10" @click="input(i-1)" :class="[{incorrect:incorrectInput(i-1)}, `digit-${i-1}`]" :key="i">
+        {{i-1}}
+      </span>
     </section>
   </div>
 </template>
@@ -165,6 +156,7 @@ body {
 .input {
   display: grid;
   grid-gap: 2px;
+  grid-template-areas: 'd7 d8 d9' 'd4 d5 d6' 'd1 d2 d3' '. d0 .';
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   height: 35vh;
@@ -179,6 +171,12 @@ body {
 
     &:active, &:focus, &:hover {
       border-color: var(--orange);
+    }
+  }
+
+  for num in (0 .. 9) {
+    .digit-{num} {
+      grid-area: s('d%s', num);
     }
   }
 }
